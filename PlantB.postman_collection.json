@@ -1,0 +1,327 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PlantB",
+		"_postman_id": "89276594-4751-9568-0ba7-540c312787eb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"url": "localhost:3000/users/11111111",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"url": "localhost:3000/users/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post User",
+					"request": {
+						"url": "localhost:3000/users/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cc\" : 55555555,\n\t\"name\" : \"Test User 4\",\n\t\"token_amount\" : 0,\n\t\"email\" : \"testemail4@gmail.com\",\n\t\"password\" : \"pass\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Put User",
+					"request": {
+						"url": "localhost:3000/users/55555555",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cc\" : 55555555,\n\t\"name\" : \"Test User 4\",\n\t\"token_amount\" : 0,\n\t\"email\" : \"testemail4@gmail.com\",\n\t\"password\" : \"pass2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"url": "localhost:3000/users/55555555",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discounts",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Discount",
+					"request": {
+						"url": "localhost:3000/discounts/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Discounts",
+					"request": {
+						"url": "localhost:3000/discounts/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Discounts",
+					"request": {
+						"url": "localhost:3000/discounts/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\" : \"percentage\",\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"shop\" : \"someshop\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"description\" : \"Some description\",\n\t\"user_cc\" : null\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Put Discounts",
+					"request": {
+						"url": "localhost:3000/discounts/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 4,\n\t\"type\" : \"percentage\",\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"shop\" : \"someshop\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"description\" : \"Some description 2\",\n\t\"user_cc\" : null\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Discounts",
+					"request": {
+						"url": "localhost:3000/discounts/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transportation",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Transporation",
+					"request": {
+						"url": "localhost:3000/transportation/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transporations",
+					"request": {
+						"url": "localhost:3000/transportation/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Transportation",
+					"request": {
+						"url": "localhost:3000/transportation/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"user_cc\" : null\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Put Transportation",
+					"request": {
+						"url": "localhost:3000/transportation/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 4,\n\t\"amount\" : 15,\n\t\"token_cost\" : 10,\n\t\"user_cc\" : null\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Transporation",
+					"request": {
+						"url": "localhost:3000/transportation/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activities",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Activity",
+					"request": {
+						"url": "localhost:3000/activities/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Activities",
+					"request": {
+						"url": "localhost:3000/activities/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Activity",
+					"request": {
+						"url": "localhost:3000/activities/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token_reward\" : 100,\n\t\"name\" : \"some activity\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"max_number_participants\" : 10,\n\t\"date\" : \"2021-05-12 13:00:00\",\n\t\"status\" : \"open\",\n\t\"description\" : \"Some description\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Put Activity",
+					"request": {
+						"url": "localhost:3000/activities/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 4,\n\t\"token_reward\" : 100,\n\t\"name\" : \"some activity2\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"max_number_participants\" : 10,\n\t\"date\" : \"2021-05-12 13:00:00\",\n\t\"status\" : \"open\",\n\t\"description\" : \"Some description2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Activity",
+					"request": {
+						"url": "localhost:3000/activities/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
