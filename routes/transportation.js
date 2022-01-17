@@ -21,45 +21,43 @@ con.connect(function(err) {
 
 router.get('/', (req, res) => {
     con.query("Select * FROM transportation", function (err, result, fields) {
-        if (err) throw err;
-        res.send(result).status(200)
+        if (err) res.status(500).send(err);
+        else res.status(200).send(result)
     });
 });
 
-router.get('/:id', (req, res) => {
-    con.query("Select * FROM transportation WHERE id = " + req.params.id, function (err, result, fields) {
-        if (err) throw err;
-        res.send(result).status(200)
+router.get('/:qr', (req, res) => {
+    con.query("Select * FROM transportation WHERE qr_code = '" + req.params.qr  + "'", function (err, result, fields) {
+        if (err) res.status(500).send(err);
+        else res.status(200).send(result)
     });
 });
 
 router.post('/', (req,res) => {
-    con.query("INSERT INTO transportation VALUES(DEFAULT" +
-        ","+ req.body.amount +
-        "," + req.body.token_cost +
-        "," + req.body.user_cc + ")",
+    con.query("INSERT INTO transportation VALUES('"  + req.body.qr_code +
+        "',"+ req.body.amount +
+        "," + req.body.token_cost + ")",
     function (err, result, fields) {
-        if (err) throw err;
-        res.send(result).status(200)
+        if (err) res.status(500).send(err);
+        else res.status(200).send(result)
     });
 });
 
-router.put('/:id', (req, res) => {
-    con.query("UPDATE transportation SET id = " + req.body.id +
-        ", amount = " + req.body.amount +
+router.put('/:qr', (req, res) => {
+    con.query("UPDATE transportation SET qr_code = '" + req.body.qr_code +
+        "', amount = " + req.body.amount +
         ", token_cost = " + req.body.token_cost +
-        ", user_cc = " + req.body.user_cc + 
-        " WHERE id =" + req.params.id ,
+        " WHERE qr_code ='" + req.params.qr + "'",
     function (err, result, fields) {
-        if (err) throw err;
-        res.send(result).status(200)
+        if (err) res.status(500).send(err);
+        else res.status(200).send(result)
     });
 });
 
-router.delete('/:id', (req, res) => {
-    con.query("DELETE FROM transportation WHERE id = " + req.params.id, function (err, result, fields) {
-        if (err) throw err;
-        res.send(result).status(200)
+router.delete('/:qr', (req, res) => {
+    con.query("DELETE FROM transportation WHERE qr_code = '" + req.params.qr + "'", function (err, result, fields) {
+        if (err) res.status(500).send(err);
+        else res.status(200).send(result)
     });
 });
 

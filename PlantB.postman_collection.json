@@ -93,7 +93,7 @@
 				{
 					"name": "Get Discount",
 					"request": {
-						"url": "localhost:3000/discounts/1",
+						"url": "localhost:3000/discounts/Discount_1",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -126,7 +126,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"type\" : \"percentage\",\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"shop\" : \"someshop\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"description\" : \"Some description\",\n\t\"user_cc\" : null\n}"
+							"raw": "{\n\t\"qr_code\" : \"Discount_4\",\n\t\"type\" : \"percentage\",\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"shop\" : \"someshop\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"description\" : \"Some description\",\n\t\"user_cc\" : null\n}"
 						},
 						"description": ""
 					},
@@ -135,7 +135,7 @@
 				{
 					"name": "Put Discounts",
 					"request": {
-						"url": "localhost:3000/discounts/4",
+						"url": "localhost:3000/discounts/Discount_4",
 						"method": "PUT",
 						"header": [
 							{
@@ -146,7 +146,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : 4,\n\t\"type\" : \"percentage\",\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"shop\" : \"someshop\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"description\" : \"Some description 2\",\n\t\"user_cc\" : null\n}"
+							"raw": "{\n\t\"qr_code\" : \"Discount_4\",\n\t\"type\" : \"percentage\",\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"shop\" : \"someshop\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"description\" : \"Some description 2\",\n\t\"user_cc\" : null\n}"
 						},
 						"description": ""
 					},
@@ -155,7 +155,7 @@
 				{
 					"name": "Delete Discounts",
 					"request": {
-						"url": "localhost:3000/discounts/4",
+						"url": "localhost:3000/discounts/Discount_4",
 						"method": "DELETE",
 						"header": [],
 						"body": {},
@@ -172,7 +172,7 @@
 				{
 					"name": "Get Transporation",
 					"request": {
-						"url": "localhost:3000/transportation/1",
+						"url": "localhost:3000/transportation/Transportation_1",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -205,7 +205,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"user_cc\" : null\n}"
+							"raw": "{\n\t\"qr_code\" : \"Transportation_4\",\n\t\"amount\" : 10,\n\t\"token_cost\" : 10,\n\t\"user_cc\" : null\n}"
 						},
 						"description": ""
 					},
@@ -214,7 +214,7 @@
 				{
 					"name": "Put Transportation",
 					"request": {
-						"url": "localhost:3000/transportation/4",
+						"url": "localhost:3000/transportation/Transportation_4",
 						"method": "PUT",
 						"header": [
 							{
@@ -225,7 +225,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : 4,\n\t\"amount\" : 15,\n\t\"token_cost\" : 10,\n\t\"user_cc\" : null\n}"
+							"raw": "{\n\t\"qr_code\" : \"Transportation_4\",\n\t\"id\" : 4,\n\t\"amount\" : 15,\n\t\"token_cost\" : 10,\n\t\"user_cc\" : null\n}"
 						},
 						"description": ""
 					},
@@ -234,7 +234,7 @@
 				{
 					"name": "Delete Transporation",
 					"request": {
-						"url": "localhost:3000/transportation/4",
+						"url": "localhost:3000/transportation/Transportation_4",
 						"method": "DELETE",
 						"header": [],
 						"body": {},
@@ -251,7 +251,7 @@
 				{
 					"name": "Get Activity",
 					"request": {
-						"url": "localhost:3000/activities/1",
+						"url": "localhost:3000/activities/Activity_1",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -284,7 +284,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"token_reward\" : 100,\n\t\"name\" : \"some activity\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"max_number_participants\" : 10,\n\t\"date\" : \"2021-05-12 13:00:00\",\n\t\"status\" : \"open\",\n\t\"description\" : \"Some description\"\n}"
+							"raw": "{\n\t\"qr_code\": \"Activity_5\",\n\t\"token_reward\" : 100,\n\t\"name\" : \"some activity\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"max_number_participants\" : 10,\n\t\"date\" : \"2021-05-12 13:00:00\",\n\t\"status\" : \"open\",\n\t\"hours_to_repeat\" : 0,\n\t\"description\" : \"Some description\"\n}"
 						},
 						"description": ""
 					},
@@ -293,7 +293,7 @@
 				{
 					"name": "Put Activity",
 					"request": {
-						"url": "localhost:3000/activities/4",
+						"url": "localhost:3000/activities/Activity_5",
 						"method": "PUT",
 						"header": [
 							{
@@ -304,7 +304,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : 4,\n\t\"token_reward\" : 100,\n\t\"name\" : \"some activity2\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"max_number_participants\" : 10,\n\t\"date\" : \"2021-05-12 13:00:00\",\n\t\"status\" : \"open\",\n\t\"description\" : \"Some description2\"\n}"
+							"raw": "{\n\t\"qr_code\": \"Activity_5\",\n\t\"token_reward\" : 100,\n\t\"name\" : \"some activity2\",\n\t\"location_x\" : 258.58,\n\t\"location_y\" : 258.58,\n\t\"max_number_participants\" : 10,\n\t\"date\" : \"2021-05-12 13:00:00\",\n\t\"status\" : \"open\",\n\t\"hours_to_repeat\" : 0,\n\t\"description\" : \"Some description2\"\n}"
 						},
 						"description": ""
 					},
@@ -313,7 +313,221 @@
 				{
 					"name": "Delete Activity",
 					"request": {
-						"url": "localhost:3000/activities/4",
+						"url": "localhost:3000/activities/Activity_5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Friends",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Friends",
+					"request": {
+						"url": "localhost:3000/users/22222222/friends",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Friends",
+					"request": {
+						"url": "localhost:3000/users/11111111/friends",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user1_cc\" : 22222222,\n\t\"user2_cc\" : 11111111\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Friends",
+					"request": {
+						"url": "localhost:3000/users/22222222/friends/11111111",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User_activity",
+			"description": "",
+			"item": [
+				{
+					"name": "Get user activities",
+					"request": {
+						"url": "localhost:3000/users/11111111/activities",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post user activity",
+					"request": {
+						"url": "localhost:3000/users/11111111/activities",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_cc\" : 11111111,\n\t\"activity_qr\" : \"Activity_3\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user activity",
+					"request": {
+						"url": "localhost:3000/users/11111111/activities/Activity_3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User_discounts",
+			"description": "",
+			"item": [
+				{
+					"name": "Get user discounts",
+					"request": {
+						"url": "localhost:3000/users/11111111/discounts",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get user unused discounts",
+					"request": {
+						"url": "localhost:3000/users/11111111/unused_discounts",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post user discounts",
+					"request": {
+						"url": "localhost:3000/users/11111111/discounts",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_cc\" : 11111111,\n\t\"discounts_qr\" : \"Discount_3\",\n\t\"status\" : \"unused\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user discounts",
+					"request": {
+						"url": "localhost:3000/users/11111111/discounts/Discount_3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User_transportation",
+			"description": "",
+			"item": [
+				{
+					"name": "Get user transportation",
+					"request": {
+						"url": "localhost:3000/users/11111111/transportation",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get user unused transportation",
+					"request": {
+						"url": "localhost:3000/users/11111111/unused_transportation",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post user transportation",
+					"request": {
+						"url": "localhost:3000/users/11111111/transportation",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_cc\" : 11111111,\n\t\"transportation_qr\" : \"Transportation_3\",\n\t\"status\" : \"unused\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user transportation",
+					"request": {
+						"url": "localhost:3000/users/11111111/transportation/Transportation_3",
 						"method": "DELETE",
 						"header": [],
 						"body": {},
