@@ -35,8 +35,10 @@ router.get('/:qr', (req, res) => {
 
 router.post('/', (req,res) => {
     con.query("INSERT INTO transportation VALUES('"  + req.body.qr_code +
+        "','" + req.body.name +
         "',"+ req.body.amount +
-        "," + req.body.token_cost + ")",
+        "," + req.body.token_cost +
+        ",'" + req.body.img_url + "')",
     function (err, result, fields) {
         if (err) res.status(500).send(err);
         else res.status(200).send(result)
@@ -45,9 +47,11 @@ router.post('/', (req,res) => {
 
 router.put('/:qr', (req, res) => {
     con.query("UPDATE transportation SET qr_code = '" + req.body.qr_code +
+        "', name = '" + req.body.name +
         "', amount = " + req.body.amount +
         ", token_cost = " + req.body.token_cost +
-        " WHERE qr_code ='" + req.params.qr + "'",
+        ", img_url = '" + req.body.img_url +
+        "' WHERE qr_code ='" + req.params.qr + "'",
     function (err, result, fields) {
         if (err) res.status(500).send(err);
         else res.status(200).send(result)

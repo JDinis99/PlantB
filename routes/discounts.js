@@ -35,13 +35,15 @@ router.get('/:qr', (req, res) => {
 
 router.post('/', (req,res) => {
     con.query("INSERT INTO discounts VALUES('" + req.body.qr_code +
-        "','"+ req.body.type +
+        "','" + req.body.name +
+        "','" + req.body.type +
         "'," + req.body.amount +
         "," + req.body.token_cost +
         ",'" + req.body.shop +
         "'," + req.body.location_x +
         "," + req.body.location_y +
-        ",'" + req.body.description + "')",
+        ",'" + req.body.description + 
+        "','" + req.body.img_url + "')",
     function (err, result, fields) {
         if (err) res.status(500).send(err);
         else res.status(200).send(result)
@@ -50,6 +52,7 @@ router.post('/', (req,res) => {
 
 router.put('/:qr', (req, res) => {
     con.query("UPDATE discounts SET qr_code = '" + req.body.qr_code +
+        "', name = '" + req.body.name +
         "', type = '"+ req.body.type +
         "', amount = " + req.body.amount +
         ", token_cost = " + req.body.token_cost +
@@ -57,6 +60,7 @@ router.put('/:qr', (req, res) => {
         "', location_x = " + req.body.location_x +
         ", location_y = " + req.body.location_y +
         ", description = '" + req.body.description +
+        "', img_url = '" + req.body.img_url +
         "' WHERE qr_code = '" + req.params.qr + "'",
     function (err, result, fields) {
         if (err) res.status(500).send(err);

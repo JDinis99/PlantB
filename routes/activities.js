@@ -43,7 +43,8 @@ router.post('/', (req,res) => {
         ",'" + req.body.date +
         "','" + req.body.status +
         "'," + req.body.hours_to_repeat +
-        ",'" + req.body.description + "')",
+        ",'" + req.body.description +
+        "','" + req.body.img_url + "')",
     function (err, result, fields) {
         if (err) res.status(500).send(err);
         else res.status(200).send(result)
@@ -61,6 +62,7 @@ router.put('/:qr', (req, res) => {
         "', status = '" + req.body.status +
         "', hours_to_repeat = " + req.body.hours_to_repeat +
         ", description = '" + req.body.description +
+        "', img_url = '" + req.body.img_url +
         "' WHERE qr_code = '" + req.params.qr + "'",
     function (err, result, fields) {
         if (err) res.status(500).send(err);
