@@ -93,7 +93,7 @@ router.post('/login', (req, res)  => {
 // NOTE: Currently friends is a one way street, meaning that when user 1 is friends with user 2, user 2 is not friends with user 1s
 
 router.get('/:cc/friends', (req, res) => {
-    con.query("Select * FROM friends INNER JOIN USERS ON friends.user1_cc = USERS.cc WHERE user1_cc = " + req.params.cc, function (err, result, fields) {
+    con.query("Select * FROM friends INNER JOIN USERS ON friends.user2_cc = USERS.cc WHERE user1_cc = " + req.params.cc, function (err, result, fields) {
         if (err) res.status(500).send(err);
         else res.status(200).send(result)
     });
