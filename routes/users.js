@@ -132,7 +132,7 @@ router.get('/:cc/leaderboard', (req, res) => {
 });
 
 router.get('/:cc/friendleaderboard', (req, res)  => {
-    con.query("Select * FROM friends INNER JOIN USERS ON friends.user1_cc = users.cc WHERE user1_cc = " + req.params.cc,
+    con.query("Select * FROM friends INNER JOIN USERS ON friends.user2_cc = users.cc WHERE user1_cc = " + req.params.cc,
     function (err, result, fields) {
         if (err) res.status(500).send(err);
         else{
