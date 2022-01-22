@@ -103,7 +103,7 @@ router.post('/:cc/friends', (req,res) => {
     con.query("INSERT INTO friends VALUES(" + req.body.user1_cc +
         ","+ req.body.user2_cc + ")",
     function (err, result, fields) {
-        if (err) res.status(500).send(err);
+        if (err) res.status(200).send(err);
         else res.status(200).send(result)
     });
 });
@@ -159,7 +159,7 @@ router.post('/:cc/activities', (req,res) => {
     con.query("INSERT INTO User_Activity VALUES(" + req.body.user_cc +
         ",'"+ req.body.activity_qr + "')",
     function (err, result, fields) {
-        if (err) res.status(500).send(err);
+        if (err) res.status(200).send(err);
         else res.status(200).send(result)
     });
 });

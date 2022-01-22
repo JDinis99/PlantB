@@ -56,14 +56,16 @@ CREATE TABLE Friends (
     user1_cc BIGINT UNSIGNED,
     user2_cc BIGINT UNSIGNED,
     FOREIGN KEY (user1_cc) REFERENCES Users(cc),
-    FOREIGN KEY (user2_cc) REFERENCES Users(cc)
+    FOREIGN KEY (user2_cc) REFERENCES Users(cc),
+    PRIMARY KEY(user1_cc, user2_cc)
 );
 
 CREATE TABLE User_Activity (
     user_cc BIGINT UNSIGNED,
     activity_qr VARCHAR(255),
     FOREIGN KEY (user_cc) REFERENCES Users(cc),
-    FOREIGN KEY (activity_qr) REFERENCES Activities(qr_code)
+    FOREIGN KEY (activity_qr) REFERENCES Activities(qr_code),
+    PRIMARY KEY(user_cc, activity_qr)
 );
 
 CREATE TABLE User_Discounts (
@@ -108,6 +110,7 @@ INSERT INTO Transportation VALUES ("Transportation_2_qr", "Transportation_2", 1,
 INSERT INTO Transportation VALUES ("Transportation_3_qr", "Transportation_3", 1, 400, "https://thumbs.web.sapo.io/?W=910&H=0&delay_optim=1&webp=1&epic=NGIz4npDgfUxluN46cvOKoIkZlLVHI2vtHyASAQn8ZFiDL1XY+aqcy2T4OJZYlG/FATeph7Wucc2/l0M7H8PcondB/6Ila3FV+SknIvC6FmTk2I=");
 INSERT INTO Transportation VALUES ("Transportation_4_qr", "Transportation_4", 1, 50, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlHvBROpuAvHUe87WTDFouR24L3_4-3NGHEQ&usqp=CAU");
 INSERT INTO Transportation VALUES ("Transportation_5_qr", "Transportation_5", 1, 100, "https://lisbonlisboaportugal.com/images/650x450/portas-do-sol-alfama.jpg");
+INSERT INTO Transportation VALUES ("Transportation_9_qr", "Transportation_9", 1, 100, "https://bordalo.observador.pt/v2/q:85/c:3543:1994:nowe:0:92/rs:fill:980/f:webp/plain/https://s3.observador.pt/wp-content/uploads/2020/10/29094214/GettyImages-1211666146.jpg");
 
 INSERT INTO Activities VALUES ("Activity_1_qr", 100,  "Test Activity 1", 100.25, 100.25, 4, "2022-01-01 13:00:00", "finished", 0, "A test activity with maximum 4 users for 1st of January that rewards 100 tokens and finished", "https://ciclovivo.com.br/wp-content/uploads/2019/07/peneira-cheia-de-pl%C3%A1sticos.jpg");
 INSERT INTO Activities VALUES ("Activity_2_qr", 200, "Test Activity 2", 150.25, 150.25, 10, "2022-01-03 9:30:00", "closed", 0, "A test activity with maximum 10 users for 3rd of January that rewards 200 tokens and closed", "https://image.freepik.com/fotos-gratis/reciclar-fundo-com-mulher-segura-recicle-sinal_23-2147825485.jpg");
