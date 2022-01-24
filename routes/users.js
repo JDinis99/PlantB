@@ -87,7 +87,6 @@ router.post('/login', (req, res)  => {
 });
 
 
-
 // Friends: See, Add and remove friends
 // TODO: Make get return the activities, transportation, discounts and friends (not just ids)
 // NOTE: Currently friends is a one way street, meaning that when user 1 is friends with user 2, user 2 is not friends with user 1s
@@ -158,10 +157,33 @@ router.get('/:cc/activities', (req, res) => {
 router.post('/:cc/activities', (req,res) => {
     con.query("INSERT INTO User_Activity VALUES(" + req.body.user_cc +
         ",'"+ req.body.activity_qr + "')",
-    function (err, result, fields) {
-        if (err) res.status(200).send(err);
-        else res.status(200).send(result)
-    });
+        function (err, result, fields) {
+            if (err) res.status(500).send(err);
+            else{
+                con.query("Select * FROM users WHERE cc = " + req.params.cc,
+                function (err, result, fields) {
+                    if (err) res.status(500).send(err);
+                    else {
+                        current_token = result[0]["token_amount"];
+                        current_total = result[0]["token_total"];
+                        con.query("Select * FROM Activities WHERE qr_code = '" + req.body.activity_qr + "'",
+                        function (err, result, fields) {
+                            if (err) res.status(500).send(err);
+                            else {
+                                reward = result[0]["token_reward"];
+                                con.query("UPDATE Users SET token_amount = " + (current_token + reward) +
+                                ", token_total =" + (current_total + reward) +
+                                " WHERE cc = " + req.body.user_cc,
+                                function (err, result, fields) {
+                                    if (err) res.status(500).send(err);
+                                    else res.status(200).send(result)
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
 });
 
 router.delete('/:cc/activities/:qr', (req, res) => {
@@ -198,7 +220,28 @@ router.post('/:cc/discounts', (req,res) => {
         "','" +  req.body.status + "')",
     function (err, result, fields) {
         if (err) res.status(500).send(err);
-        else res.status(200).send(result)
+        else{
+            con.query("Select * FROM users WHERE cc = " + req.params.cc,
+            function (err, result, fields) {
+                if (err) res.status(500).send(err);
+                else {
+                    current_token = result[0]["token_amount"];
+                    con.query("Select * FROM Discounts WHERE qr_code = '" + req.body.discounts_qr + "'",
+                    function (err, result, fields) {
+                        if (err) res.status(500).send(err);
+                        else {
+                            cost = result[0]["token_cost"];
+                            con.query("UPDATE Users SET token_amount = " + (current_token - cost) +
+                            " WHERE cc = " + req.body.user_cc,
+                            function (err, result, fields) {
+                                if (err) res.status(500).send(err);
+                                else res.status(200).send(result)
+                            });
+                        }
+                    });
+                }
+            });
+        }
     });
 });
 
@@ -236,7 +279,29 @@ router.post('/:cc/transportation', (req,res) => {
         "','" +  req.body.status + "')",
     function (err, result, fields) {
         if (err) res.status(500).send(err);
-        else res.status(200).send(result)
+        else {
+
+            con.query("Select * FROM users WHERE cc = " + req.params.cc,
+            function (err, result, fields) {
+                if (err) res.status(500).send(err);
+                else {
+                    current_token = result[0]["token_amount"];
+                    con.query("Select * FROM Transportation WHERE qr_code = '" + req.body.transportation_qr + "'",
+                    function (err, result, fields) {
+                        if (err) res.status(500).send(err);
+                        else {
+                            cost = result[0]["token_cost"];
+                            con.query("UPDATE Users SET token_amount = " + (current_token - cost) +
+                            " WHERE cc = " + req.body.user_cc,
+                            function (err, result, fields) {
+                                if (err) res.status(500).send(err);
+                                else res.status(200).send(result)
+                            });
+                        }
+                    });
+                }
+            });
+        }
     });
 });
 
