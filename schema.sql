@@ -140,7 +140,6 @@ INSERT INTO Friends VALUES (22222222 , 44444444);
 INSERT INTO Friends VALUES (22222222 , 55555555);
 
 INSERT INTO User_Activity VALUES (11111111, "Activity_1_qr");
-INSERT INTO User_Activity VALUES (11111111, "Activity_2_qr");
 INSERT INTO User_Activity VALUES (11111111, "Activity_4_qr");
 INSERT INTO User_Activity VALUES (11111111, "Activity_6_qr");
 INSERT INTO User_Activity VALUES (11111111, "Activity_7_qr");
@@ -151,17 +150,13 @@ INSERT INTO User_Activity VALUES (22222222, "Activity_4_qr");
 INSERT INTO User_Activity VALUES (22222222, "Activity_5_qr");
 
 INSERT INTO User_Discounts VALUES (11111111, "Discount_1_qr", "used");
-INSERT INTO User_Discounts VALUES (11111111, "Discount_2_qr", "used");
 INSERT INTO User_Discounts VALUES (11111111, "Discount_4_qr", "used");
-INSERT INTO User_Discounts VALUES (11111111, "Discount_6_qr", "used");
 INSERT INTO User_Discounts VALUES (11111111, "Discount_7_qr", "used");
 INSERT INTO User_Discounts VALUES (11111111, "Discount_8_qr", "used");
 INSERT INTO User_Discounts VALUES (22222222, "Discount_1_qr", "used");
 INSERT INTO User_Discounts VALUES (22222222, "Discount_2_qr", "used");
 INSERT INTO User_Discounts VALUES (22222222, "Discount_3_qr", "used");
 
-INSERT INTO User_Transportation VALUES (11111111, "Transportation_1_qr", "used");
-INSERT INTO User_Transportation VALUES (11111111, "Transportation_2_qr", "used");
 INSERT INTO User_Transportation VALUES (11111111, "Transportation_4_qr", "used");
 INSERT INTO User_Transportation VALUES (11111111, "Transportation_5_qr", "used");
 INSERT INTO User_Transportation VALUES (11111111, "Transportation_9_qr", "used");
