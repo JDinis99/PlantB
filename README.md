@@ -8,6 +8,8 @@ Install with `npm install`, then create a mysql database and run the server. Use
 
 Activities are spread acrros the city and are acessible via map or list. Complete activities and scan a QR code to recieve the reward tokens of each activity.
 
+<img src="https://github.com/JDinis99/PlantB/blob/main/img/Activities.gif" height="50%"/>
+
 ![](https://github.com/JDinis99/PlantB/blob/main/img/Activities.gif)
 
 ## Discounts and Tickets
